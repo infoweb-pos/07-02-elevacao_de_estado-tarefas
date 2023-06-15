@@ -14,7 +14,7 @@ const AppTarefaEditar = (props: any) => {
 		<div className="card">
 			<label>Tarefa: </label>
 			<input type="text" value={props.valor} onChange={props.mudar} />
-			<button>Adicionar</button>
+			<button onClick={props.adicionar}>Adicionar</button>
 		</div>
 	);
 };
@@ -43,6 +43,12 @@ const App = () => {
 		"Elevar os estados dos componentes quando tiver dados compartilhados",
 		"Programar a modificação dos estados",
 	]);
+	const tarefaAdicionar = () => {
+		const lista = tarefas;
+		lista.push(tarefa);
+		setTarefas(lista);
+		setTarefa("");
+	};
 
 	return (
 		<>
@@ -50,6 +56,7 @@ const App = () => {
 			<AppTarefaEditar
 				valor={tarefa}
 				mudar={tratarMudancaTexto}
+				adicionar={tarefaAdicionar}
 			/>
 			<AppTarefaLista data={tarefas} />
 		</>
