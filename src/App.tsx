@@ -28,7 +28,7 @@ const AppTarefaEditar = () => {
 };
 
 const AppTarefaLista = () => {
-	const tarefas = [
+	const [tarefas, setTarefas] = useState([
 		"Prototipar interface do usuário",
 		"Implementar com HTML a interface com o usário em React",
 		"Extrair componentes React da implementação HTML",
@@ -36,7 +36,8 @@ const AppTarefaLista = () => {
 		"Modificar os dados de variáveis para estado ou propriedades de componentes",
 		"Elevar os estados dos componentes quando tiver dados compartilhados",
 		"Programar a modificação dos estados",
-	];
+	]);
+
 	return (
 		<div className="card">
 			<ul>
