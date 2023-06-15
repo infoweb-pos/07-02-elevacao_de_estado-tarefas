@@ -9,17 +9,11 @@ const AppNavBar = () => {
 	);
 };
 
-const AppTarefaEditar = () => {
-	const [tarefa, setTarefa] = useState("");
-
+const AppTarefaEditar = (props: any) => {
 	return (
 		<div className="card">
 			<label>Tarefa: </label>
-			<input
-				type="text"
-				value={tarefa}
-				onChange={(e: any) => setTarefa(e.target.value)}
-			/>
+			<input type="text" value={props.valor} onChange={props.mudar} />
 			<button>Adicionar</button>
 		</div>
 	);
@@ -38,6 +32,8 @@ const AppTarefaLista = (props: any) => {
 };
 
 const App = () => {
+	const [tarefa, setTarefa] = useState("");
+	const tratarMudancaTexto = (e: any) => setTarefa(e.target.value);
 	const [tarefas, setTarefas] = useState([
 		"Prototipar interface do usuário",
 		"Implementar com HTML a interface com o usário em React",
@@ -51,7 +47,10 @@ const App = () => {
 	return (
 		<>
 			<AppNavBar />
-			<AppTarefaEditar />
+			<AppTarefaEditar
+				valor={tarefa}
+				mudar={tratarMudancaTexto}
+			/>
 			<AppTarefaLista data={tarefas} />
 		</>
 	);
