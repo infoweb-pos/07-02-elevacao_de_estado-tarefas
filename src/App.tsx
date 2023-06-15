@@ -8,10 +8,21 @@ const AppNavBar = () => {
 	);
 };
 
+const AppTarefaEditar = () => {
+	return (
+		<div className="card">
+			<label>Tarefa: </label>
+			<input type="text" />
+			<button>Adicionar</button>
+		</div>
+	);
+};
+
 const App = () => {
 	return (
 		<>
 			<AppNavBar />
+			<AppTarefaEditar />
 		</>
 	);
 };
