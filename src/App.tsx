@@ -1,12 +1,19 @@
-import './App.css'
+import "./App.css";
+
+const AppNavBar = () => {
+	return (
+		<div className="card">
+			<h1>Lista de tarefas</h1>
+		</div>
+	);
+};
 
 const App = () => {
+	return (
+		<>
+			<AppNavBar />
+		</>
+	);
+};
 
-  return (
-    <>
-      <h1>Aplicativo exemplo de elevação de estado</h1>
-    </>
-  )
-}
-
-export default App
+export default App;
