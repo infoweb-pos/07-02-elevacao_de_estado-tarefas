@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 
 const AppNavBar = () => {
@@ -9,10 +10,18 @@ const AppNavBar = () => {
 };
 
 const AppTarefaEditar = () => {
+	const [tarefa, setTarefa] = useState("");
+
 	return (
 		<div className="card">
 			<label>Tarefa: </label>
-			<input type="text" />
+			<input
+				type="text"
+				value={tarefa}
+				onChange={(e: React.FormEvent<HTMLInputElement>) =>
+					setTarefa(e.target.value)
+				}
+			/>
 			<button>Adicionar</button>
 		</div>
 	);
